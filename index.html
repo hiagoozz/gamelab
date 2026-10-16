@@ -245,159 +245,254 @@
     Laboratório de Jogos © 2026
   </footer>
 
-  <script>
-    // Lista de jogos. Podemos adicionar novos jogos aqui.
-    const jogos = [
-      {
-        nome: "Blox Fruits",
-        categoria: "Roblox",
-        descricao: "Frutas, missões, chefes e progressão.",
-        busca: "blox fruits roblox frutas boss"
-      },
-      {
-        nome: "Grand Piece Online",
-        categoria: "Roblox",
-        descricao: "Frutas, habilidades, chefes e itens.",
-        busca: "grand piece online gpo roblox"
-      },
-      {
-        nome: "Minecraft",
-        categoria: "Minecraft",
-        descricao: "Construção, exploração, sobrevivência e addons.",
-        busca: "minecraft bedrock java addons mods"
-      },
-      {
-        nome: "ARK",
-        categoria: "Sobrevivência",
-        descricao: "Dinossauros, criaturas, recursos e sobrevivência.",
-        busca: "ark survival dinossauros criaturas"
-      }
-    ];
+ <script>
+const jogos = [
+  {
+    nome: "Blox Fruits",
+    categoria: "Roblox",
+    descricao: "Frutas, missões, chefes e progressão.",
+    busca: "blox fruits roblox frutas boss haki",
+    guia: `
+      <h3>🍎 Guia de Blox Fruits</h3>
+      <p><b>Objetivo:</b> evoluir seu personagem, conseguir equipamentos e explorar novos mares.</p>
+      <h4>Por onde começar?</h4>
+      <table>
+        <tr><th>Etapa</th><th>O que fazer</th></tr>
+        <tr><td>Início</td><td>Complete missões adequadas ao seu nível.</td></tr>
+        <tr><td>Evolução</td><td>Use missões repetíveis para ganhar experiência.</td></tr>
+        <tr><td>Equipamento</td><td>Pesquise frutas, estilos de luta e armas compatíveis com sua build.</td></tr>
+        <tr><td>Progressão</td><td>Explore as áreas e os mares conforme avança.</td></tr>
+      </table>
+      <h4>💡 Dicas úteis</h4>
+      <ul>
+        <li>Não gaste todos os recursos sem pesquisar as opções.</li>
+        <li>Escolha uma build que combine com seu estilo de jogo.</li>
+        <li>Observe os requisitos antes de tentar desbloquear uma habilidade.</li>
+        <li>Confira as atualizações, pois valores e requisitos podem mudar.</li>
+      </ul>
+      <h4>Checklist de evolução</h4>
+      <label><input type="checkbox"> Completei as missões da minha área.</label><br>
+      <label><input type="checkbox"> Conferi os requisitos do próximo objetivo.</label><br>
+      <label><input type="checkbox"> Organizei meus equipamentos.</label>
+    `
+  },
+  {
+    nome: "Grand Piece Online",
+    categoria: "Roblox",
+    descricao: "Frutas, habilidades, chefes e itens.",
+    busca: "grand piece online gpo roblox frutas boss haki",
+    guia: `
+      <h3>🏴‍☠️ Guia de Grand Piece Online</h3>
+      <p><b>Objetivo:</b> explorar ilhas, melhorar sua build e obter equipamentos.</p>
+      <h4>Áreas importantes</h4>
+      <table>
+        <tr><th>Atividade</th><th>Preparação</th></tr>
+        <tr><td>Exploração</td><td>Confira o nível recomendado e o trajeto.</td></tr>
+        <tr><td>Chefes</td><td>Estude os ataques e combine funções com sua equipe.</td></tr>
+        <tr><td>Frutas</td><td>Compare habilidades, mobilidade e estilo de combate.</td></tr>
+        <tr><td>Trocas</td><td>Confira os itens oferecidos e os valores atuais antes de aceitar.</td></tr>
+      </table>
+      <h4>💡 Dicas úteis</h4>
+      <ul>
+        <li>Verifique os requisitos para desbloquear cada estilo de luta.</li>
+        <li>Não confunda raridade com valor de troca.</li>
+        <li>Antes de enfrentar um chefe, leve equipamentos adequados.</li>
+        <li>As chances de drop e os valores podem mudar com atualizações.</li>
+      </ul>
+      <h4>Checklist de preparação</h4>
+      <label><input type="checkbox"> Conferi os requisitos do objetivo.</label><br>
+      <label><input type="checkbox"> Preparei equipamentos e habilidades.</label><br>
+      <label><input type="checkbox"> Combinei a estratégia com a equipe.</label>
+    `
+  },
+  {
+    nome: "Minecraft",
+    categoria: "Minecraft",
+    descricao: "Construção, exploração, sobrevivência e addons.",
+    busca: "minecraft bedrock java addons mods receitas encantamentos",
+    guia: `
+      <h3>⛏️ Guia de Minecraft</h3>
+      <p><b>Objetivo:</b> coletar recursos, construir abrigo e explorar o mundo.</p>
+      <h4>Progressão inicial</h4>
+      <table>
+        <tr><th>Fase</th><th>Prioridade</th></tr>
+        <tr><td>Primeiro dia</td><td>Coletar madeira, fabricar ferramentas e preparar abrigo.</td></tr>
+        <tr><td>Mineração</td><td>Levar comida, tochas e ferramentas apropriadas.</td></tr>
+        <tr><td>Base</td><td>Organizar baús, plantações e área de fabricação.</td></tr>
+        <tr><td>Exploração</td><td>Preparar equipamentos e guardar itens importantes.</td></tr>
+      </table>
+      <h4>💡 Dicas úteis</h4>
+      <ul>
+        <li>Guarde materiais importantes em baús organizados.</li>
+        <li>Leve comida e iluminação ao explorar cavernas.</li>
+        <li>Faça uma cópia do mundo antes de testar addons.</li>
+        <li>Confira se o addon é compatível com sua edição e versão.</li>
+      </ul>
+      <h4>Checklist de sobrevivência</h4>
+      <label><input type="checkbox"> Preparei um abrigo.</label><br>
+      <label><input type="checkbox"> Tenho comida e ferramentas.</label><br>
+      <label><input type="checkbox"> Organizei os recursos coletados.</label>
+    `
+  },
+  {
+    nome: "ARK: Survival",
+    categoria: "Sobrevivência",
+    descricao: "Dinossauros, criaturas, recursos e sobrevivência.",
+    busca: "ark survival dinossauros criaturas recursos domesticação",
+    guia: `
+      <h3>🦖 Guia de ARK: Survival</h3>
+      <p><b>Objetivo:</b> sobreviver, construir uma base, coletar recursos e domesticar criaturas.</p>
+      <h4>Prioridades</h4>
+      <table>
+        <tr><th>Objetivo</th><th>Estratégia</th></tr>
+        <tr><td>Sobreviver</td><td>Monitore fome, água, temperatura e ameaças.</td></tr>
+        <tr><td>Construir</td><td>Escolha uma área segura e armazene materiais.</td></tr>
+        <tr><td>Coletar</td><td>Use ferramentas e criaturas adequadas a cada recurso.</td></tr>
+        <tr><td>Domesticar</td><td>Pesquise alimento, método e tempo de domesticação.</td></tr>
+      </table>
+      <h4>💡 Dicas úteis</h4>
+      <ul>
+        <li>Evite explorar áreas perigosas sem preparação.</li>
+        <li>Faça baús para separar materiais, comida e equipamentos.</li>
+        <li>Pesquise as habilidades das criaturas antes de escolher uma.</li>
+        <li>As mecânicas podem variar entre versões e mapas.</li>
+      </ul>
+      <h4>Checklist de sobrevivência</h4>
+      <label><input type="checkbox"> Tenho uma base segura.</label><br>
+      <label><input type="checkbox"> Separei comida e recursos.</label><br>
+      <label><input type="checkbox"> Preparei os itens para a próxima exploração.</label>
+    `
+  }
+];
 
-    const pesquisa = document.getElementById("pesquisa");
-    const lista = document.getElementById("lista-jogos");
-    const contador = document.getElementById("contador");
-    const botoesCategoria =
-      document.querySelectorAll("[data-category]");
+const pesquisa = document.getElementById("pesquisa");
+const lista = document.getElementById("lista-jogos");
+const contador = document.getElementById("contador");
+const botoesCategoria = document.querySelectorAll("[data-category]");
 
-    let categoriaAtual = "Todos";
+let categoriaAtual = "Todos";
 
-    function mostrarJogos() {
-      const termo = pesquisa.value.trim().toLocaleLowerCase("pt-BR");
+// Área onde os guias completos serão exibidos.
+const detalhes = document.createElement("section");
+detalhes.id = "detalhes-jogo";
+detalhes.className = "card";
+detalhes.style.marginTop = "20px";
+detalhes.style.display = "none";
+lista.insertAdjacentElement("afterend", detalhes);
 
-      const encontrados = jogos.filter(function(jogo) {
-        const correspondeCategoria =
-          categoriaAtual === "Todos" ||
-          jogo.categoria === categoriaAtual;
+// Aparência das tabelas e dos checklists dos guias.
+const estiloGuias = document.createElement("style");
+estiloGuias.textContent = `
+  #detalhes-jogo { line-height: 1.6; overflow-wrap: anywhere; }
+  #detalhes-jogo table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  #detalhes-jogo th, #detalhes-jogo td {
+    border: 1px solid #354663; padding: 9px; text-align: left;
+  }
+  #detalhes-jogo th { background: #202d46; color: #67e8f9; }
+  #detalhes-jogo label { display: inline-block; margin: 5px 0; }
+  #detalhes-jogo input[type=checkbox] { width: auto; margin-right: 8px; }
+  @media (max-width: 500px) {
+    #detalhes-jogo th, #detalhes-jogo td { padding: 6px; font-size: 14px; }
+  }
+`;
+document.head.appendChild(estiloGuias);
 
-        const texto = (
-          jogo.nome + " " +
-          jogo.categoria + " " +
-          jogo.descricao + " " +
-          jogo.busca
-        ).toLocaleLowerCase("pt-BR");
+function abrirGuia(jogo) {
+  detalhes.innerHTML = `
+    ${jogo.guia}
+    <p><small>Guia introdutório. Confira as atualizações do jogo para informações que possam mudar.</small></p>
+    <button type="button" id="fechar-guia">Fechar guia</button>
+  `;
+  detalhes.style.display = "block";
+  document.getElementById("fechar-guia").addEventListener("click", () => {
+    detalhes.style.display = "none";
+  });
+  detalhes.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
-        return correspondeCategoria && texto.includes(termo);
-      });
+function mostrarJogos() {
+  const termo = pesquisa.value.trim().toLocaleLowerCase("pt-BR");
+  const encontrados = jogos.filter(jogo => {
+    const correspondeCategoria =
+      categoriaAtual === "Todos" || jogo.categoria === categoriaAtual;
+    const texto = [
+      jogo.nome, jogo.categoria, jogo.descricao, jogo.busca
+    ].join(" ").toLocaleLowerCase("pt-BR");
+    return correspondeCategoria && texto.includes(termo);
+  });
 
-      lista.replaceChildren();
-      contador.textContent =
-        encontrados.length +
-        (encontrados.length === 1
-          ? " jogo encontrado"
-          : " jogos encontrados");
+  lista.replaceChildren();
+  contador.textContent = encontrados.length +
+    (encontrados.length === 1 ? " jogo encontrado" : " jogos encontrados");
 
-      if (encontrados.length === 0) {
-        const mensagem = document.createElement("p");
-        mensagem.className = "empty";
-        mensagem.textContent =
-          "Nenhum jogo encontrado. Tente outro nome ou categoria.";
-        lista.appendChild(mensagem);
-        return;
-      }
+  if (encontrados.length === 0) {
+    const mensagem = document.createElement("p");
+    mensagem.className = "empty";
+    mensagem.textContent = "Nenhum jogo encontrado. Tente outro nome ou categoria.";
+    lista.appendChild(mensagem);
+    detalhes.style.display = "none";
+    return;
+  }
 
-      encontrados.forEach(function(jogo) {
-        const cartao = document.createElement("article");
-        cartao.className = "card game-card";
+  encontrados.forEach(jogo => {
+    const cartao = document.createElement("article");
+    cartao.className = "card game-card";
 
-        const tag = document.createElement("span");
-        tag.className = "game-tag";
-        tag.textContent = jogo.categoria;
+    const tag = document.createElement("span");
+    tag.className = "game-tag";
+    tag.textContent = jogo.categoria;
 
-        const titulo = document.createElement("h3");
-        titulo.textContent = "🎮 " + jogo.nome;
+    const titulo = document.createElement("h3");
+    titulo.textContent = "🎮 " + jogo.nome;
 
-        const descricao = document.createElement("p");
-        descricao.textContent = jogo.descricao;
+    const descricao = document.createElement("p");
+    descricao.textContent = jogo.descricao;
 
-        const botao = document.createElement("button");
-        botao.type = "button";
-        botao.textContent = "Ver informações";
-        botao.addEventListener("click", function() {
-          alert(
-            jogo.nome +
-            "\n\n" + jogo.descricao +
-            "\n\nGuias completos para este jogo serão adicionados em breve."
-          );
-        });
+    const botao = document.createElement("button");
+    botao.type = "button";
+    botao.textContent = "Ler guia completo";
+    botao.addEventListener("click", () => abrirGuia(jogo));
 
-        cartao.append(tag, titulo, descricao, botao);
-        lista.appendChild(cartao);
-      });
-    }
+    cartao.append(tag, titulo, descricao, botao);
+    lista.appendChild(cartao);
+  });
+}
 
-    pesquisa.addEventListener("input", mostrarJogos);
+pesquisa.addEventListener("input", mostrarJogos);
 
-    botoesCategoria.forEach(function(botao) {
-      botao.addEventListener("click", function() {
-        categoriaAtual = botao.dataset.category;
-
-        botoesCategoria.forEach(function(outroBotao) {
-          outroBotao.classList.toggle(
-            "active",
-            outroBotao === botao
-          );
-        });
-
-        mostrarJogos();
-      });
+botoesCategoria.forEach(botao => {
+  botao.addEventListener("click", () => {
+    categoriaAtual = botao.dataset.category;
+    botoesCategoria.forEach(outro => {
+      outro.classList.toggle("active", outro === botao);
     });
-
-    function calcularDrop() {
-      const chance = Number(
-        document.getElementById("chance").value
-      );
-      const tentativas = Number(
-        document.getElementById("tentativas").value
-      );
-      const resultado = document.getElementById("resultado");
-
-      if (
-        !Number.isFinite(chance) ||
-        !Number.isInteger(tentativas) ||
-        chance <= 0 || chance > 100 ||
-        tentativas < 1 || tentativas > 1000000
-      ) {
-        resultado.textContent =
-          "Informe uma chance maior que 0 e até 100%, " +
-          "e entre 1 e 1.000.000 tentativas inteiras.";
-        return;
-      }
-
-      const probabilidade =
-        100 * (1 - Math.pow(1 - chance / 100, tentativas));
-
-      resultado.textContent =
-        "Chance de conseguir pelo menos um drop: " +
-        probabilidade.toLocaleString("pt-BR", {
-          maximumFractionDigits: 4
-        }) + "%";
-    }
-
-    document.getElementById("botao-calcular")
-      .addEventListener("click", calcularDrop);
-
     mostrarJogos();
-  </script>
+  });
+});
+
+// Calculadora: chance de conseguir pelo menos um drop.
+function calcularDrop() {
+  const chance = Number(document.getElementById("chance").value);
+  const tentativas = Number(document.getElementById("tentativas").value);
+  const resultado = document.getElementById("resultado");
+
+  if (!Number.isFinite(chance) || !Number.isInteger(tentativas) ||
+      chance <= 0 || chance > 100 || tentativas < 1 ||
+      tentativas > 1000000) {
+    resultado.textContent =
+      "Informe uma chance maior que 0 e até 100%, e entre 1 e 1.000.000 tentativas inteiras.";
+    return;
+  }
+
+  const probabilidade = 100 * (1 - Math.pow(1 - chance / 100, tentativas));
+  resultado.textContent = "Chance de conseguir pelo menos um drop: " +
+    probabilidade.toLocaleString("pt-BR", { maximumFractionDigits: 4 }) + "%";
+}
+
+document.getElementById("botao-calcular")
+  .addEventListener("click", calcularDrop);
+
+mostrarJogos();
+</script>
 </body>
 </html>
