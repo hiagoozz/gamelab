@@ -3,6 +3,409 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ferramentas, calculadoras e guias para jogadores.">
+  <title>Laboratório de Jogos</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: #f1f5f9;
+    }
+
+    header {
+      padding: 24px 8%;
+      background: #121a30;
+      border-bottom: 1px solid #263451;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #67e8f9;
+    }
+
+    header p {
+      color: #aab8d0;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1000px;
+      margin: 35px auto;
+    }
+
+    .hero {
+      padding: 32px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #172554, #312e81);
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      margin-top: 0;
+    }
+
+    .search-area {
+      margin-top: 30px;
+    }
+
+    .search-area h2 {
+      margin-bottom: 12px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 13px;
+      margin: 8px 0 12px;
+      border-radius: 8px;
+      border: 1px solid #52617b;
+      background: #0b1020;
+      color: white;
+      font-size: 16px;
+    }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 20px;
+    }
+
+    button {
+      background: #67e8f9;
+      color: #0b1020;
+      border: 0;
+      border-radius: 8px;
+      padding: 11px 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      filter: brightness(0.9);
+    }
+
+    .categories button {
+      background: #202d46;
+      color: #e2e8f0;
+      border: 1px solid #354663;
+    }
+
+    .categories button.active {
+      background: #67e8f9;
+      color: #0b1020;
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .card {
+      padding: 22px;
+      background: #151e32;
+      border: 1px solid #293750;
+      border-radius: 14px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    .game-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .game-card .game-tag {
+      color: #67e8f9;
+      font-size: 13px;
+    }
+
+    .game-card button {
+      margin-top: auto;
+    }
+
+    .empty {
+      color: #cbd5e1;
+      padding: 18px 0;
+    }
+
+    .section-title {
+      margin-top: 38px;
+    }
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🎮 Laboratório de Jogos</h1>
+    <p>Seu portal de ferramentas e conhecimento gamer.</p>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Jogue com inteligência.</h2>
+      <p>
+        Encontre jogos, consulte informações e use ferramentas
+        para aproveitar melhor sua jogatina.
+      </p>
+    </section>
+
+    <section class="search-area">
+      <h2>🔎 Encontre seu jogo</h2>
+      <p>Digite o nome de um jogo ou escolha uma categoria.</p>
+
+      <label for="pesquisa">Pesquisar jogos</label>
+      <input
+        id="pesquisa"
+        type="search"
+        placeholder="Ex.: Minecraft, Blox Fruits..."
+        autocomplete="off"
+      >
+
+      <div class="categories" aria-label="Categorias de jogos">
+        <button class="active" data-category="Todos">Todos</button>
+        <button data-category="Roblox">Roblox</button>
+        <button data-category="Minecraft">Minecraft</button>
+        <button data-category="Sobrevivência">Sobrevivência</button>
+      </div>
+
+      <p id="contador" aria-live="polite"></p>
+      <div id="lista-jogos" class="tools"></div>
+    </section>
+
+    <h2 class="section-title">🧰 Ferramentas gamer</h2>
+
+    <section class="tools">
+      <article class="card">
+        <h3>🎲 Calculadora de Drop</h3>
+        <p>
+          Calcule a chance de conseguir pelo menos um item
+          depois de várias tentativas independentes.
+        </p>
+
+        <label for="chance">Chance por tentativa (%)</label>
+        <input
+          id="chance"
+          type="number"
+          min="0.01"
+          max="100"
+          value="0.3"
+          step="0.1"
+        >
+
+        <label for="tentativas">Número de tentativas</label>
+        <input
+          id="tentativas"
+          type="number"
+          min="1"
+          max="1000000"
+          value="100"
+          step="1"
+        >
+
+        <button id="botao-calcular">Calcular chance</button>
+        <p id="resultado" aria-live="polite">
+          Sua chance aparecerá aqui.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>📚 Guias Gamer</h3>
+        <p>
+          Nosso espaço para tutoriais, estratégias e informações
+          verificadas sobre diferentes jogos.
+        </p>
+        <p>Novos guias serão adicionados em breve.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    Laboratório de Jogos © 2026
+  </footer>
+
+  <script>
+    // Lista de jogos. Podemos adicionar novos jogos aqui.
+    const jogos = [
+      {
+        nome: "Blox Fruits",
+        categoria: "Roblox",
+        descricao: "Frutas, missões, chefes e progressão.",
+        busca: "blox fruits roblox frutas boss"
+      },
+      {
+        nome: "Grand Piece Online",
+        categoria: "Roblox",
+        descricao: "Frutas, habilidades, chefes e itens.",
+        busca: "grand piece online gpo roblox"
+      },
+      {
+        nome: "Minecraft",
+        categoria: "Minecraft",
+        descricao: "Construção, exploração, sobrevivência e addons.",
+        busca: "minecraft bedrock java addons mods"
+      },
+      {
+        nome: "ARK",
+        categoria: "Sobrevivência",
+        descricao: "Dinossauros, criaturas, recursos e sobrevivência.",
+        busca: "ark survival dinossauros criaturas"
+      }
+    ];
+
+    const pesquisa = document.getElementById("pesquisa");
+    const lista = document.getElementById("lista-jogos");
+    const contador = document.getElementById("contador");
+    const botoesCategoria =
+      document.querySelectorAll("[data-category]");
+
+    let categoriaAtual = "Todos";
+
+    function mostrarJogos() {
+      const termo = pesquisa.value.trim().toLocaleLowerCase("pt-BR");
+
+      const encontrados = jogos.filter(function(jogo) {
+        const correspondeCategoria =
+          categoriaAtual === "Todos" ||
+          jogo.categoria === categoriaAtual;
+
+        const texto = (
+          jogo.nome + " " +
+          jogo.categoria + " " +
+          jogo.descricao + " " +
+          jogo.busca
+        ).toLocaleLowerCase("pt-BR");
+
+        return correspondeCategoria && texto.includes(termo);
+      });
+
+      lista.replaceChildren();
+      contador.textContent =
+        encontrados.length +
+        (encontrados.length === 1
+          ? " jogo encontrado"
+          : " jogos encontrados");
+
+      if (encontrados.length === 0) {
+        const mensagem = document.createElement("p");
+        mensagem.className = "empty";
+        mensagem.textContent =
+          "Nenhum jogo encontrado. Tente outro nome ou categoria.";
+        lista.appendChild(mensagem);
+        return;
+      }
+
+      encontrados.forEach(function(jogo) {
+        const cartao = document.createElement("article");
+        cartao.className = "card game-card";
+
+        const tag = document.createElement("span");
+        tag.className = "game-tag";
+        tag.textContent = jogo.categoria;
+
+        const titulo = document.createElement("h3");
+        titulo.textContent = "🎮 " + jogo.nome;
+
+        const descricao = document.createElement("p");
+        descricao.textContent = jogo.descricao;
+
+        const botao = document.createElement("button");
+        botao.type = "button";
+        botao.textContent = "Ver informações";
+        botao.addEventListener("click", function() {
+          alert(
+            jogo.nome +
+            "\n\n" + jogo.descricao +
+            "\n\nGuias completos para este jogo serão adicionados em breve."
+          );
+        });
+
+        cartao.append(tag, titulo, descricao, botao);
+        lista.appendChild(cartao);
+      });
+    }
+
+    pesquisa.addEventListener("input", mostrarJogos);
+
+    botoesCategoria.forEach(function(botao) {
+      botao.addEventListener("click", function() {
+        categoriaAtual = botao.dataset.category;
+
+        botoesCategoria.forEach(function(outroBotao) {
+          outroBotao.classList.toggle(
+            "active",
+            outroBotao === botao
+          );
+        });
+
+        mostrarJogos();
+      });
+    });
+
+    function calcularDrop() {
+      const chance = Number(
+        document.getElementById("chance").value
+      );
+      const tentativas = Number(
+        document.getElementById("tentativas").value
+      );
+      const resultado = document.getElementById("resultado");
+
+      if (
+        !Number.isFinite(chance) ||
+        !Number.isInteger(tentativas) ||
+        chance <= 0 || chance > 100 ||
+        tentativas < 1 || tentativas > 1000000
+      ) {
+        resultado.textContent =
+          "Informe uma chance maior que 0 e até 100%, " +
+          "e entre 1 e 1.000.000 tentativas inteiras.";
+        return;
+      }
+
+      const probabilidade =
+        100 * (1 - Math.pow(1 - chance / 100, tentativas));
+
+      resultado.textContent =
+        "Chance de conseguir pelo menos um drop: " +
+        probabilidade.toLocaleString("pt-BR", {
+          maximumFractionDigits: 4
+        }) + "%";
+    }
+
+    document.getElementById("botao-calcular")
+      .addEventListener("click", calcularDrop);
+
+    mostrarJogos();
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Laboratório de Jogos</title>
   <style>
     * {
